@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Partner from "./Partner";
+import "../styles/homePage.scss";
 
 export class HomePage extends Component {
   render() {

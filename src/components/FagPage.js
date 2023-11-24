@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Fags from "./Fags";
+import "../styles/FAQ.scss";
 
 export class FagPage extends Component {
   render() {
