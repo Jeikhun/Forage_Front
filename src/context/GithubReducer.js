@@ -5,6 +5,11 @@ const GithubReducer = (state, action) => {
         ...state,
         fags: action.payload,
       };
+    case "Get_Partners":
+      return {
+        ...state,
+        partners: action.payload,
+      };
     default:
       return state;
   }
