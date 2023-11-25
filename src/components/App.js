@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import GithubState from "../context/GithubState";
 import HomePage from "./HomePage";
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>;
 
 const App = () => {
   return (
