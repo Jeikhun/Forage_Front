@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.container{
+    width: 100%;
+    max-width: 1220px;
+    margin: auto;
+}
+.wrapper{
+    margin: auto;
+}
+/* Navigation Section Style */
+#navigation{
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    .block{
+        display: flex;
+
+        .direction{
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            &>a{
+                text-decoration: none;
+                color: #333;
+            }
+            
+        }
+        .sign-in{
+            display: flex;  
+            gap: 32px;
+            margin-left: 172px;
+            align-items: center;
+            .sign-in-btn{
+                padding: 12px 20px;
+                background-color: #F2753B;
+                border-radius: 30px;
+                color: #FFF;
+                cursor: pointer;
+                font-weight: 500;
+            }
+            .log-in-btn{
+                color: #333;
+            }
+        }
+    }
+    
+}
+/* Navigation Section Style */
+
+.content{
+    margin-top: 142px;
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+    & h3{
+        color: #F2753B;
+        font-size: 36px;
+        font-weight: 600;
+
+    }
+    & p{
+        color: #333;
+        font-size: 24px;
+        font-weight: 500;
+    }
+}
+
+/* Footer Section Style */
+.footer-sec{
+    background: #FFF;
+    box-shadow: 0px -6px 33px 0px rgba(0, 0, 0, 0.06);
+    margin-top: 120px;
+    .footer-block{
+        padding-top: 44px;
+        .footer-content{
+            display: flex;
+            gap: 137px;
+            .footer-logo{
+                & img{
+                    width: 30px;
+                    height: 64px;
+                }
+            }
+            .footer-navigation{
+                display: flex;
+                gap: 133px;
+                & h4{
+                    margin-bottom: 16px;
+                    cursor: pointer;
+                    color: #4F4F4F;
+                    font-weight: 600;
+                    font-size: 18px;
+                }
+                & p{
+                    margin-top: 8px;
+                    cursor: pointer;
+                    color: #828282;
+                    font-weight: 400;
+                }
+                
+            }
+        }
+        .footer-underline{
+            width: inherit;
+            margin: 66px 0 18px 0;
+            display: inline-block;
+            border: 1px solid #E0E0E0;
+        }
+        .footer-bottom{
+            color: #828282;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 18px;
+        }
+    }
+}
+/* Footer Section Style */
