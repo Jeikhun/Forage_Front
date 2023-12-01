@@ -1,73 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/CSS/cabinet.css">
-</head>
-<body>
-    <div class="wrapper">
-        <header>
-            <!-- Header Navigation Partial View Start -->
-            <nav id="navigation" class="container">
-                <a class="logo" href="">
-                    <img src="/Images/SVG/logo-svg.svg" alt="" >
-                </a>
-                <div class="acc-block">
-
-                    <p>F</p>
-                </div>
-            </nav>
-            <!-- Header Navigation Partial View End -->
-        </header>
-
-
-
-        <footer>
-            <!-- Footer Section Partial View Start -->
-        <div class="footer-sec">
-            <div class="footer-block container">
-                <div class="footer-content">
-                    <a class="footer-logo" href="">
-                        <img src="/Images/SVG/logo-svg.svg" alt="">
-                    </a>
-                    <div class="footer-navigation">
-                        <div class="about-table">
-                            <h4>About Us</h4>
-                            <p>About</p>
-                            <p>Contact</p>
-                            <p>FAQs</p>
-
-                        </div>
-                        <div class="support-table">
-                            <h4>Support</h4>
-                            <p>Privacy Notice</p>
-                            <p>Cookie Notice</p>
-                            <p>Cookie Settings</p>
-                            
-                        </div>
-                        <div class="students-table">
-                            <h4>For Students</h4>
-                            <p>All Job Simulations</p>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/CSS/cabinet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     
-                        </div>
-                        <div class="employers-table">
-                            <h4>For Employers</h4>
-                            <p>Why Internify</p>
-                            <p>Employer Resources</p>
-                        </div>
-                    </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <!-- Header Navigation Partial View Start -->
+        <nav id="navigation" class="containerr">
+          <a class="logo" href="">
+            <img src="/Images/SVG/logo-svg.svg" alt="" />
+          </a>
+          <div class="acc-block">
+            <p>F</p>
+          </div>
+        </nav>
+        <!-- Header Navigation Partial View End -->
+      </header>
+
+      <section class="video containerr">
+
+
+        <div class="video-carousel-block">
+          <h4>Practical work</h4>
+          <div class="carousel-wrapper">
+            <div id="myCarousel" class="carousel slide" data-interval="false" data-ride="carousel">
+                
+            
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <div class="custom-video__control">▶</div>
+                    <video class="video_video" poster="../Images/Img/buzov.jpg" src="../Video/Usaq Mahnilari_ Buzovum.mp4">
+                    </video>
+                  </div>
+            
+                  <div class="item">
+                    <div class="custom-video__control">▶</div>
+                    <video class="video_video" src="../Video/Usaq Mahnilari_ Buzovum.mp4"></video>
+                  </div>
                 </div>
-                <span class="footer-underline"></span>
-                <p class="footer-bottom">2023 Internify, Inc.All right reserved.</p>
-            </div>
+            
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+          </div>
+
+          <h4 class="li-header">What should be done</h4>
+          <ul>
+            <li>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores
+              doloribus ipsum et!
+            </li>
+            <li>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores
+              doloribus ipsum et!
+            </li>
+            <li>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores
+              doloribus ipsum et!
+            </li>
+          </ul>
         </div>
-        <!-- Footer Section Partial View End -->
-        </footer>
+      </section>
+
+      <section class="upload-file containerr">
+        <div class="upload-header">
+            <p>To write a message</p>
+        </div>
+        <div class="upload-content">
+            <div class="upload-button">
+                <input type="file" id="file-input" name="file-input" accept="">
+                <label id="file-input-label" for="file-input">
+                    <img id="file-img" src="../Images/Img/attach-file.png" alt="">
+                    <p id="file-input-p">Attach file</p>
+                </label> 
+            </div>
+            <a href="">Send</a>
+        </div>
+        <div class="upload-bottom">
+            <p>We check most works within the first 24 hours. In rare cases - up to three working days.</p>
+        </div>
+      </section>
     </div>
-</body>
+    
+    <script src="/JS/cabinet.js"></script>
+  </body>
 </html>
