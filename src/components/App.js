@@ -8,6 +8,7 @@ import HomePage from "./HomePage";
 import Contact from "./Contact";
 import InternRegister from "./InternRegister";
 import NewUser from "./NewUser";
+import PartnerRegister from "./PartnerRegister";
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>;
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/fags" component={FagPage} />
             <Route path="/contact" component={Contact} />
             <Route path="/internRegister" component={InternRegister} />
+            <Route path="/partnerRegister" component={PartnerRegister} />
             <Route path="/register" component={NewUser} />
           </Switch>
           <Footer />
