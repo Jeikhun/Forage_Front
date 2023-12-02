@@ -1,64 +1,45 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import "../styles/registration.scss";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 const InternRegister = () => {
-  const [File, setFile] = useState();
+  const [Image, setImage] = useState();
   const [Name, setName] = useState("");
   const [Surname, setSurname] = useState("");
   const [BirthYear, setBirthYear] = useState("");
   const [Experience, setExperience] = useState("");
   const [FinNumber, setFinNumber] = useState("");
   const [Error, setError] = useState([]);
-  const userId = localStorage.getItem("userId")
-    ? JSON.parse(localStorage.getItem("userId"))
+  const userId = localStorage.getItem("UserId")
+    ? JSON.parse(localStorage.getItem("UserId"))
     : "";
-
+  const saveFile = (e) => {
+    console.log(e.target.files[0]);
+    setImage(e.target.files[0]);
+  };
   const submit = async (e) => {
     e.preventDefault();
-    if (
-      Name != "" &&
-      Surname != "" &&
-      BirthYear != "" &&
-      FinNumber != "" &&
-      Experience != ""
-    ) {
-      const formData = new FormData();
-      formData.append("Name", Name);
-      formData.append("Surname", Surname);
-      formData.append("BirthYear", BirthYear.toString());
-      formData.append("FinNumber", FinNumber);
-      formData.append("Experience", Experience);
-      formData.append("AppUserId", userId);
-      await axios.post('https://localhost:7297/api/Intern"', formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
-
-      // const response = await fetch("https://localhost:7297/api/Intern", {
-      //   method: "POST",
-      //   body: formData,
-      //   headers: {
-      //     "Content-Type": "multipart/form-data",
-      //   },
-      // });
-      // const result = await response.json();
-      console.log(response.result);
-      if (result.statusCode == 200) {
-        setError([]);
-        localStorage.setItem("UserId", JSON.stringify(result.userId));
-        history.push("/internRegister");
-      } else {
-        setError(result.message);
-      }
+    const formData = new FormData();
+    formData.append("Image", Image);
+    formData.append("Name", Name);
+    formData.append("Surname", Surname);
+    formData.append("BirthYear", BirthYear);
+    formData.append("FinNumber", FinNumber);
+    formData.append("Experience", Experience);
+    formData.append("AppUserId", userId);
+    var response = await fetch("https://localhost:7297/api/Intern", {
+      method: "POST",
+      body: formData,
+    });
+    const result = await response.json();
+    if (result.statusCode == 201) {
+      setError([]);
     } else {
-      Swal.fire({
-        title: "Error",
-        text: "Fill all the gaps",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
+      setError(result.errors);
     }
   };
+
   return (
     <div id="wrapper">
       <section className="head">
@@ -66,27 +47,36 @@ const InternRegister = () => {
       </section>
 
       <section className="inputs_sec">
-        <form onSubmit={submit} className="inputs_form">
+        <form className="inputs_form" onSubmit={submit}>
           <div className="test">
             <div>
               <label htmlFor="Name">Name</label>
               <input
                 type="text"
                 id="Name"
+                name="Name"
+                // {...register("Name", { required: true })}
                 placeholder="Ali"
                 onChange={(e) => setName(e.target.value)}
               />
-              <p className="text text-danger"></p>
+              <p className="text text-danger">
+                {" "}
+                {Error.Name != undefined ? Error.Name[0] : ""}
+              </p>
             </div>
             <div>
               <label htmlFor="Surname">Surname</label>
               <input
                 type="text"
                 id="Surname"
+                name="Surname"
                 placeholder="Aliyev"
                 onChange={(e) => setSurname(e.target.value)}
               />
-              <p className="text text-danger"></p>
+              <p className="text text-danger">
+                {" "}
+                {Error.Surname != undefined ? Error.Surname[0] : ""}
+              </p>
             </div>
           </div>
           <div>
@@ -94,41 +84,59 @@ const InternRegister = () => {
             <input
               type="date"
               id="Birth"
+              name="birthYear"
               placeholder="17.01.1998"
               onChange={(e) => setBirthYear(e.target.value)}
             />
-            <p className="text text-danger"></p>
+            <p className="text text-danger">
+              {" "}
+              {Error.BirthYear != undefined ? Error.BirthYear[0] : ""}
+            </p>
           </div>
           <div>
             <label htmlFor="Experience">Experience (if there)</label>
             <input
               type="text"
               id="Experience"
+              name="Experience"
               placeholder="Write your work experience"
               onChange={(e) => setExperience(e.target.value)}
             />
-            <p className="text text-danger"></p>
+            <p className="text text-danger">
+              {" "}
+              {Error.Experience != undefined ? Error.Experience[0] : ""}
+            </p>
           </div>
           <div>
             <label htmlFor="Image">Image</label>
             <input
-              filename={File}
-              onChange={(e) => setFile(e.target.files[0])}
+              onChange={saveFile}
               type="file"
+              name="Image"
               accept="image/*"
-              id="Image"
+              id="input"
             />
-            <p className="text text-danger"></p>
+            <p className="text text-danger">
+              {" "}
+              {Error.Image != undefined ? Error.Image[0] : ""}
+            </p>
           </div>
           <div>
             <label htmlFor="Fin">Fin Number</label>
             <input
               type="text"
               id="Fin"
+              name="FinNumber"
               placeholder="*******"
               onChange={(e) => setFinNumber(e.target.value)}
             />
-            <p className="text text-danger"></p>
+            <p className="text text-danger">
+              {" "}
+              {Error.FinNumber != undefined ? Error.FinNumber[0] : ""}
+            </p>
+          </div>
+          <div>
+            <input type="text" hidden name="AppUserId" defaultValue={userId} />
           </div>
           <section className="register_sec">
             <button id="register_btn" type="submit">
@@ -147,7 +155,7 @@ const InternRegister = () => {
       </section>
       <section className="sign_sec">
         <p>
-          Already have an account? <a href="">Sign in</a>
+          Already have an account? <NavLink to="/login">Sign in</NavLink>
         </p>
       </section>
     </div>

@@ -5,6 +5,7 @@
     "css-loader": "^6.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.48.2",
     "react-native": "^0.72.7",
     "react-owl-carousel": "^2.3.3",
     "react-router-dom": "^5.2.0",

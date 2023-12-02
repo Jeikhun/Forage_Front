@@ -9,7 +9,7 @@ export class Footer extends Component {
             <div className="footer-content">
               <a className="footer-logo" href="">
                 <img
-                  src="http://127.0.0.1:5500/Images/SVG/logo-svg.svg"
+                  src="http://127.0.0.1:5501/Images/SVG/logo-svg.svg"
                   alt=""
                 />
               </a>

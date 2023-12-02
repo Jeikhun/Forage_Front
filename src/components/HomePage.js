@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import Partner from "./Partner";
 import "../styles/homePage.scss";
+import Career from "./Career";
 
 export class HomePage extends Component {
   render() {
     return (
       <>
+        <Career />
         <div className="central container">
           <div className="about-program">
             <div className="about-intern">
@@ -24,7 +26,7 @@ export class HomePage extends Component {
               <a href="">
                 Explore virtual internship programs{" "}
                 <img
-                  src="http://127.0.0.1:5500/Images/Img/right_arrow.svg"
+                  src="http://127.0.0.1:5501/Images/Img/right_arrow.svg"
                   alt=""
                 />
               </a>
@@ -45,7 +47,7 @@ export class HomePage extends Component {
               <a href="">
                 Place a virtual internship programs{" "}
                 <img
-                  src="http://127.0.0.1:5500/Images/Img/right_arrow.svg"
+                  src="http://127.0.0.1:5501/Images/Img/right_arrow.svg"
                   alt=""
                 />
               </a>

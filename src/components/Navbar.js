@@ -5,7 +5,7 @@ export class Navbar extends Component {
     return (
       <nav id="navigation" className="container">
         <a className="logo" href="">
-          <img alt="" src="http://127.0.0.1:5500/Images/SVG/logo-svg.svg" />
+          <img alt="" src="http://127.0.0.1:5501/Images/SVG/logo-svg.svg" />
         </a>
         <div className="block">
           <div className="direction">
